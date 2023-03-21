@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.weather-clear {
+  background-color: #f3a712;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-rain {
+  background-color: #4d4d4d;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-snow {
+  background-color: #e5e5e5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-clouds {
+  background-color: #78909c;
+}
+
+.weather-mist {
+  background-color: #b0bec5;
+}
+
+.weather-thunderstorm {
+  background-color: #3b3b3b;
+}
+
+.weather {
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.weather h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.weather .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin-top: 20px;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  p {
+    font-size: 1rem;
+  }
+  .icon {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .icon {
+    font-size: 2rem;
   }
 }
