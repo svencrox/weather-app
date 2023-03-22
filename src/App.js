@@ -10,8 +10,15 @@ import {
   WiThunderstorm,
 } from "react-icons/wi";
 import { css } from "@emotion/react";
-import "./App.css";
-import ClipLoader from "react-spinners/ClipLoader";
+import "./App.scss";
+import BarLoader from "react-spinners/BarLoader";
+
+const override = {
+  display: "block",
+  margin: "50vh auto",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -38,20 +45,15 @@ function App() {
     fetchData();
   }, []);
 
-  const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-  `;
-
   if (loading) {
     return (
       <div className="loader">
-        <ClipLoader
-          color={"#36D7B7"}
+        <BarLoader
+          color={"blue"}
           loading={true}
-          css={override}
-          size={150}
+          cssOverride={override}
+          height={4}
+          width={500}
         />
       </div>
     );
