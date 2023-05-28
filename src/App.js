@@ -20,6 +20,7 @@ function App() {
     const [country, setCountry] = useState("");
     const [searched, setSearched] = useState(false);
 
+    // fetch weather data from api and set weather as well as search history
     useEffect(() => {
         if (searched && city && country) {
             const fetchData = async () => {
@@ -52,6 +53,7 @@ function App() {
         setSearched(false);
     }, [searched, city, country]);
 
+    // handle search events
     const handleSearch = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -62,6 +64,7 @@ function App() {
         setSearched(true);
     };
 
+    // handle deletion of query
     const handleDelete = (index) => {
         setSearchHistory((prevHistory) => [
             ...prevHistory.slice(0, index),
