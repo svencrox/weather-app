@@ -72,6 +72,17 @@ function App() {
         ]);
     };
 
+    // Transform string to start with an uppercase letter followed by lowercase letters
+    const transformString = (str) => {
+        if (!str) return "";
+        const parts = str.split(","); // Split the string by comma
+        const transformedParts = parts.map((part) => {
+            const trimmedPart = part.trim(); // Remove any leading/trailing spaces
+            return trimmedPart.charAt(0).toUpperCase() + trimmedPart.slice(1);
+        });
+        return transformedParts.join(", "); // Join the transformed parts back with comma
+    };
+
     return (
         <div>
             <form className="search-form" onSubmit={handleSearch}>
@@ -138,7 +149,7 @@ function App() {
                                     >
                                         <div className="history-left">
                                             <p className="history-query">
-                                                {entry.query}
+                                                {transformString(entry.query)}
                                             </p>
                                             <p className="history-timestamp">
                                                 {entry.timestamp}
